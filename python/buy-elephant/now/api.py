@@ -51,13 +51,11 @@ def handle_dialog(req, res):
 
         sessionStorage[user_id] = {
             'suggests': [
-                "Не хочу.",
-                "Не буду.",
-                "Отстань!",
+                "/статья",
             ]
         }
 
-        res['response']['text'] = 'Привет! Купи слона!'
+        res['response']['text'] = 'Привет, это GoldenDesign. В этом навыке есть одна основная команда — /статья. Она выберет рандомную статью с нашего сайта. Это может быть лайфхак, туториал, совет. В общем, всё что угодно'
         res['response']['buttons'] = get_suggests(user_id)
         return
 
@@ -69,7 +67,7 @@ def handle_dialog(req, res):
         'хорошо',
     ]:
         # Пользователь согласился, прощаемся.
-        res['response']['text'] = 'Слона можно найти на Яндекс.Маркете!'
+        res['response']['text'] = 'Тест!'
         return
 
     # Если нет, то убеждаем его купить слона!
